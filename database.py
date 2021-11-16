@@ -49,12 +49,15 @@ def deletecontact(id):
 def recherchecontactNum(num):
        query="select * from listcontacts where NumTel==%s" %(num)
        result= cur.execute(query)
-       for row in result:
-          print("ID :", row[0])
-          print("Nom : ", row[1])
-          print("Email: ", row[2])
-          print("Numero Tel : ", row[3])
-          print("Adresse : ", row[4])
+       if not result:
+             print("Ce numéro n'existe pas")
+       else:
+          for row in result:
+             print("ID :", row[0])
+             print("Nom : ", row[1])
+             print("Email: ", row[2])
+             print("Numero Tel : ", row[3])
+             print("Adresse : ", row[4])
 
 
 

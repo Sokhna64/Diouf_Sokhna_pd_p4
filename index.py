@@ -3,8 +3,9 @@ import database
 from database import createtable
 print("--------(((BIENVENUE DANS VOTRE APPLICATION GESTION CONTACT--------- \n", " 1 : Ajouter un contact \n", " 2 : Modifier un contact un contact \n",
       " 3 : Supprimer un contact un contact \n", " 4 : Afficher tous les contacts \n", " 5 : Rechercher par un numéro de télephone \n",)
-a = input("Taper le numéro de votre option: ")
 l = [1, 2, 3, 4, 5]
+a = int(input("Taper le numéro de votre option:"))
+
 if a not in l or a == '':
     print("Choix non disponible")
     exit()
@@ -50,4 +51,3 @@ elif a == l[3]:
 elif a == l[4]:
     num = input("Saisir le numéro de téléphone du contact demandé : ")
     database.recherchecontactNum(num)
-    print("Choix non disponible")
